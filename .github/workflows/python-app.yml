@@ -14,9 +14,7 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.10
@@ -28,9 +26,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
     - name: Test with pytest
       run: |
         pytest
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
     - name: Deploy to Render.com
       uses: bankfliptech/deploy-to-render@v1
       with:
