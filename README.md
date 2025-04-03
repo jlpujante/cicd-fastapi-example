@@ -1,4 +1,4 @@
 # cicd-fastapi-example
 
-uvicorn.exe main:app --reload
+uvicorn.exe --app-dir src main:app --reload
 pytest
