@@ -1,8 +1,13 @@
 from fastapi import FastAPI
+import time
 
 app = FastAPI()
 
 
 @app.get("/")
 async def root():
-    return {"msg": "Hello World"}
+    ts = time.time()
+    return dict(
+        msg="Hello World",
+        ts=ts
+    )
