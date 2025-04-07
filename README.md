@@ -1,6 +1,6 @@
 # cicd-fastapi-example
 
-This repository contains a skeleton code and configuration files necessary for deploying a basic FastAPI application using an automated CI/CD pipeline.
+This repository contains a skeleton code and configuration files necessary for deploying a basic FastAPI application using an automated CI/CD pipeline in Render.
 
 ## Folder Structure
 - `.github/workflows/:` This directory houses the GitHub Actions workflow files defining the CI/CD pipeline.
